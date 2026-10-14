@@ -1,22 +1,15 @@
 <?php
 
-die('LARAVEL PHP ENTRY POINT WORKS!');
+ini_set('display_errors', '1');
+error_reporting(E_ALL);
 
-use Illuminate\Foundation\Application;
-use Illuminate\Http\Request;
-
-define('LARAVEL_START', microtime(true));
-
-// Determine if the application is in maintenance mode...
-if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
-    require $maintenance;
+try {
+    require __DIR__.'/../vendor/autoload.php';
+    echo 'COMPOSER AUTOLOAD WORKS';
+} catch (\Throwable $e) {
+    echo 'BOOTSTRAP ERROR: ' . $e->getMessage();
+    exit;
 }
 
-// Register the Composer autoloader...
-require __DIR__.'/../vendor/autoload.php';
+exit;
 
-// Bootstrap Laravel and handle the request...
-/** @var Application $app */
-$app = require_once __DIR__.'/../bootstrap/app.php';
-
-$app->handleRequest(Request::capture());
