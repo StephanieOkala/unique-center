@@ -1,5 +1,7 @@
 <?php
 
+die('LARAVEL PHP ENTRY POINT WORKS!');
+
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 
