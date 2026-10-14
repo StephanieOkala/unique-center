@@ -5,11 +5,16 @@ error_reporting(E_ALL);
 
 try {
     require __DIR__.'/../vendor/autoload.php';
-    echo 'COMPOSER AUTOLOAD WORKS';
+
+    $app = require_once __DIR__.'/../bootstrap/app.php';
+
+    echo 'LARAVEL BOOTSTRAP WORKS';
 } catch (\Throwable $e) {
-    echo 'BOOTSTRAP ERROR: ' . $e->getMessage();
-    exit;
+    http_response_code(500);
+    echo '<pre>';
+    echo get_class($e) . ': ' . $e->getMessage();
+    echo "\n\n" . $e->getFile() . ':' . $e->getLine();
+    echo '</pre>';
 }
 
 exit;
-
