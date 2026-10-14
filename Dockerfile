@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install pdo pdo_mysql mbstring zip exif pcntl bcmath gd intl \
     && a2enmod rewrite \
     && rm -rf /var/lib/apt/lists/*
+    ca-certificates git unzip libzip-dev libpng-dev libonig-dev libxml2-dev \
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
