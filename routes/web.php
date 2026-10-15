@@ -1,4 +1,3 @@
-
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -12,6 +11,10 @@ use App\Http\Controllers\CustomerAuthController;
 use App\Http\Controllers\CustomerDashboardController;
 use App\Http\Controllers\CustomerAppointmentController;
 use App\Http\Controllers\AdminAuthController;
+
+Route::get('/laravel-test', function () {
+    return response('LARAVEL ROUTING WORKS!');
+});
 
 Route::get('/', function () {
     return view('home.index');
