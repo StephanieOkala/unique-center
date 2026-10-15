@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 @section('title', 'UNIQUE — Center for All | Beauty & Care')
@@ -6,7 +5,7 @@
 @section('content')
 
 <style>
-    /* Landing-page-specific styles; works offline */
+    
     .unique-home {
         overflow: hidden;
         color: #30212a;
